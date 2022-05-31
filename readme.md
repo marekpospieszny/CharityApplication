@@ -1,6 +1,4 @@
-
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
+## Charity Application
 
 1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
 

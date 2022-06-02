@@ -39,4 +39,14 @@ public class JpaDonationService implements DonationService {
     public void update(Donation donation) {
         donationRepository.save(donation);
     }
+
+    @Override
+    public Integer countAllDonations() {
+        return donationRepository.countAllDonations();
+    }
+
+    @Override
+    public Integer sumAllDonationsBags() {
+        return donationRepository.sumAllDonationsBags();
+    }
 }

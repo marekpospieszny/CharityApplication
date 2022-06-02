@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -42,8 +43,10 @@ public class Donation {
     @NotBlank
     private String zipCode;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
 
+    @DateTimeFormat(pattern = "HH:mm:ss")
     private LocalTime pickUpTime;
 
     private String pickUpComment;

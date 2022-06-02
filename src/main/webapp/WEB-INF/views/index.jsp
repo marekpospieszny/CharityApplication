@@ -90,7 +90,7 @@
                 <c:if test="${theCount.count % 2 == 1}"><li></c:if>
                 <div class="col">
                     <div class="title"><c:out value="${institution.name}"/></div>
-                    <div class="subtitle"><c:out value="${institution.description}"/></div>
+                    <div class="subtitle">Cel i misja: <c:out value="${institution.description}"/></div>
                 </div>
                 <c:if test="${theCount.count % 2 == 0}"></li></c:if>
             </c:forEach>

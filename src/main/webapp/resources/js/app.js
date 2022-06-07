@@ -164,6 +164,26 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+
+      let city = document.getElementById('city').value;
+      document.getElementById('liCity').innerHTML = city;
+      let bags = document.getElementById('bags').value;
+      document.getElementById('liBags').innerHTML = bags + " worki darów";
+      let street = document.getElementById('street').value;
+      document.getElementById('liStreet').innerHTML = street;
+      let zipCode = document.getElementById('zipCode').value;
+      document.getElementById('liZipCode').innerHTML = zipCode;
+      let phone = document.getElementById('phone').value;
+      document.getElementById('liPhone').innerHTML = phone;
+      let pickUpComment = document.getElementById('pickUpComment').value;
+      document.getElementById('liPickUpComment').innerHTML = pickUpComment;
+      let time = document.getElementById('time').value;
+      document.getElementById('liTime').innerHTML = time;
+      let date = document.getElementById('date').value;
+      document.getElementById('liDate').innerHTML = date;
+      let organization = document.getElementById('organization').value;
+      document.getElementById('liOrganization').innerHTML = 'Dla: ' + organization;
+
     }
 
   }

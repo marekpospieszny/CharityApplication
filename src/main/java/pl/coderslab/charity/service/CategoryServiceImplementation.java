@@ -7,11 +7,11 @@ import pl.coderslab.charity.repository.CategoryRepository;
 import java.util.List;
 
 @Service
-public class JpaCategoryService implements CategoryService{
+public class CategoryServiceImplementation implements CategoryService{
 
     private final CategoryRepository categoryRepository;
 
-    public JpaCategoryService(CategoryRepository categoryRepository) {
+    public CategoryServiceImplementation(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 

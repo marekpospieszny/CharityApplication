@@ -7,11 +7,11 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 import java.util.List;
 
 @Service
-public class JpaInstitutionService implements InstitutionService {
+public class InstitutionServiceImplementation implements InstitutionService {
 
     private final InstitutionRepository institutionRepository;
 
-    public JpaInstitutionService(InstitutionRepository institutionRepository) {
+    public InstitutionServiceImplementation(InstitutionRepository institutionRepository) {
         this.institutionRepository = institutionRepository;
     }
 
@@ -38,5 +38,10 @@ public class JpaInstitutionService implements InstitutionService {
     @Override
     public void update(Institution institution) {
         institutionRepository.save(institution);
+    }
+
+    @Override
+    public Institution getByName(String name) {
+        return institutionRepository.findByName(name);
     }
 }

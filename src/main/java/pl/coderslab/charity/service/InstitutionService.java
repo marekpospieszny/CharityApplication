@@ -15,4 +15,6 @@ public interface InstitutionService {
     void delete(Long id);
 
     void update(Institution institution);
+
+    Institution getByName(String name);
 }

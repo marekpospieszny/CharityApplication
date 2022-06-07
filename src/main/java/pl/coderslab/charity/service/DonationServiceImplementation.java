@@ -7,11 +7,11 @@ import pl.coderslab.charity.repository.DonationRepository;
 import java.util.List;
 
 @Service
-public class JpaDonationService implements DonationService {
+public class DonationServiceImplementation implements DonationService {
 
     private final DonationRepository donationRepository;
 
-    public JpaDonationService(DonationRepository donationRepository) {
+    public DonationServiceImplementation(DonationRepository donationRepository) {
         this.donationRepository = donationRepository;
     }
 

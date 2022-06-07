@@ -48,8 +48,10 @@ public class DonationController {
             model.addAttribute("categories",categoryService.getAllCategories());
             return "form";
         }
-        Long institutionId = Long.parseLong(request.getParameter("organization"));
-        donation.setInstitution(institutionService.get(institutionId));
+//        Long institutionId = Long.parseLong(request.getParameter("organization"));
+//        donation.setInstitution(institutionService.get(institutionId));
+        String organizationName = request.getParameter("organization");
+        donation.setInstitution(institutionService.getByName(organizationName));
         LocalTime time = LocalTime.parse(request.getParameter("time"));
         donation.setPickUpTime(time);
         donationService.add(donation);

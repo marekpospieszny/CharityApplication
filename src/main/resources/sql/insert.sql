@@ -1,8 +1,8 @@
 INSERT INTO `institutions` (`name`,`description`)
-VALUES ('Fundacja "Dbam o Zdrowie"','Pomoc dzieciom z ubogich rodzin.'),
-       ('Fundacja "A kogo"','Pomoc wybudzaniu dzieci ze śpiączki.'),
-       ('Fundacja “Dla dzieci"','Pomoc osobom znajdującym się w trudnej sytuacji życiowej.'),
-       ('Fundacja “Bez domu”','Pomoc dla osób nie posiadających miejsca zamieszkania.');
+VALUES ('Fundacja `Dbam o Zdrowie`','Pomoc dzieciom z ubogich rodzin.'),
+       ('Fundacja `A kogo`','Pomoc wybudzaniu dzieci ze śpiączki.'),
+       ('Fundacja `Dla dzieci`','Pomoc osobom znajdującym się w trudnej sytuacji życiowej.'),
+       ('Fundacja `Bez domu`','Pomoc dla osób nie posiadających miejsca zamieszkania.');
 
 INSERT INTO `categories` (`name`)
 VALUES ('ubrania, które nadają się do ponownego użycia'),

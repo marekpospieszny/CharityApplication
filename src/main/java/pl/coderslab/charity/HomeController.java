@@ -1,8 +1,11 @@
 package pl.coderslab.charity;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
 
@@ -23,10 +26,5 @@ public class HomeController {
         model.addAttribute("donationsCount", donationService.countAllDonations());
         model.addAttribute("donationsBags", donationService.sumAllDonationsBags());
         return "index";
-    }
-
-    @RequestMapping("/register")
-    public String register(Model model) {
-        return "register";
     }
 }

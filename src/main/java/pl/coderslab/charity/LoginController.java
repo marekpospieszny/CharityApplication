@@ -1,6 +1,8 @@
 package pl.coderslab.charity;
 
 import lombok.Getter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,14 +21,29 @@ import javax.validation.Valid;
 public class LoginController {
 
     private final UserService userService;
+    private final BCryptPasswordEncoder passwordEncoder;
 
-    public LoginController(UserService userService) {
+    public LoginController(UserService userService, BCryptPasswordEncoder passwordEncoder) {
         this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
     }
 
-    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
-    public String login() {
+    @GetMapping("/login")
+    public String loginPage() {
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(HttpServletRequest request) {
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        User user = userService.findByEmail(email);
+        if (user != null && user.getEmail().equals(email) && passwordEncoder.matches(password,user.getPassword())) {
+            return "redirect:/";
+        } else {
+            request.setAttribute("wrong", true);
+            return "login";
+        }
     }
 
     @GetMapping("/register")

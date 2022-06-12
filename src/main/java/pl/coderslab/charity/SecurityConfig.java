@@ -14,21 +14,12 @@ import pl.coderslab.charity.service.SpringDataUserDetailsService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("user1").password("{noop}user123").roles("USER")
-                .and()
-                .withUser("admin1").password("{noop}admin123").roles("ADMIN");
-    }
-
-    @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/home").permitAll()
                 .antMatchers("/register").permitAll()
-                .antMatchers("/about").authenticated()
-                .and().formLogin()
-                .loginPage("/login")
+                .antMatchers("/").hasRole("USER")
+                .antMatchers("/").authenticated()
+                .and().formLogin().loginPage("/login")
                 .defaultSuccessUrl("/");
     }
 

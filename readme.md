@@ -16,14 +16,6 @@ Goal of the application is to create place where everyone can share unused items
 - turn on Spring boot app,
 - load insert.sql file to fill database with demo data.
 
-To login as user:
-- email: jan.nowak@user.pl
-- password: user
-
-To login as admin:
-- email: admin@admin.pl
-- password: admin
-
 # Technologies used:
 - Java 11
 - Spring (Spring Boot)

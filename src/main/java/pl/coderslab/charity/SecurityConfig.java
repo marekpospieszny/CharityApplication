@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/register").permitAll()
                 .antMatchers("/").hasRole("USER")
                 .antMatchers("/").authenticated()
-                .and().formLogin().loginPage("/login")
+                .and().formLogin().loginPage("/login").usernameParameter("email")
                 .defaultSuccessUrl("/");
     }
 

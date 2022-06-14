@@ -33,19 +33,6 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("/login")
-    public String login(HttpServletRequest request) {
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        User user = userService.findByEmail(email);
-        if (user != null && user.getEmail().equals(email) && passwordEncoder.matches(password,user.getPassword())) {
-            return "redirect:/";
-        } else {
-            request.setAttribute("wrong", true);
-            return "login";
-        }
-    }
-
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("user",new User());

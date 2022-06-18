@@ -29,4 +29,4 @@ Goal of the application is to create place where everyone can share unused items
 - Maven
 - JSP
 
-Beta version - application is not yet fully functional, work in progress.
+Beta version 1.0 - application is not yet fully functional, work in progress.

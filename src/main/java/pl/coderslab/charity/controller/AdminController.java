@@ -8,7 +8,6 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String adminPage() {
-        return "admin";
+        return "admin/index";
     }
-
 }

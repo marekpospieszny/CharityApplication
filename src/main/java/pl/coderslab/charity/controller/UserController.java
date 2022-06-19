@@ -28,11 +28,4 @@ public class UserController {
         return "admin";
     }
 
-    @GetMapping("/admin")
-    @ResponseBody
-    public String admin(@AuthenticationPrincipal CurrentUser customUser) {
-        User entityUser = customUser.getUser();
-        return "Hello " + entityUser.getEmail();
-    }
-
 }

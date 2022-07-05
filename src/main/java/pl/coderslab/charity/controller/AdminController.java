@@ -10,4 +10,9 @@ public class AdminController {
     public String adminPage() {
         return "admin/index";
     }
+
+    @GetMapping("/admin/list")
+    public String listDonations() {
+        return "admin/list";
+    }
 }
